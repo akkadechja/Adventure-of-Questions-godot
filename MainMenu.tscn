@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://cpbig5vci8gb6"]
+
+[ext_resource type="Script" uid="uid://djnt5sb8y8na5" path="res://MainMenu.gd" id="1_eiy7p"]
+[ext_resource type="AudioStream" uid="uid://bykdafyj5lmuk" path="res://Assert/brackeys_platformer_assets/brackeys_platformer_assets/music/time_for_adventure.mp3" id="2_h7a2f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eiy7p"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.3759007, 0.42444214, 0.49183524, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="MainMenu" type="Control" unique_id=110785596]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eiy7p")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=2032079458]
+
+[node name="CenterContainer" type="CenterContainer" parent="UI" unique_id=1681295021]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -64.0
+offset_right = 92.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainBox" type="VBoxContainer" parent="UI/CenterContainer" unique_id=196061382]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="UI/CenterContainer/MainBox" unique_id=424562345]
+layout_mode = 2
+text = "Adventure of Questions"
+
+[node name="StartButton" type="Button" parent="UI/CenterContainer/MainBox" unique_id=537580080]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Start"
+
+[node name="SettingsButton" type="Button" parent="UI/CenterContainer/MainBox" unique_id=1559555964]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="UI/CenterContainer/MainBox" unique_id=2078477043]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
+
+[node name="SettingsPanel" type="Panel" parent="UI" unique_id=1264484479]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -573.0
+offset_top = -322.0
+offset_right = -573.0
+offset_bottom = -322.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="UI/SettingsPanel" unique_id=571903028]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 153.0
+offset_right = 784.0
+offset_bottom = 513.0
+
+[node name="WindowPanel" type="Panel" parent="UI/SettingsPanel/CenterContainer" unique_id=2095310546]
+custom_minimum_size = Vector2(420, 360)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eiy7p")
+
+[node name="SettingsBox" type="VBoxContainer" parent="UI/SettingsPanel/CenterContainer/WindowPanel" unique_id=1596096930]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 157.0
+offset_top = 64.0
+offset_right = 264.0
+offset_bottom = 251.0
+
+[node name="Setting" type="Label" parent="UI/SettingsPanel/CenterContainer/WindowPanel/SettingsBox" unique_id=569696448]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="FullscreenCheck" type="CheckBox" parent="UI/SettingsPanel/CenterContainer/WindowPanel/SettingsBox" unique_id=2003594562]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="MusicSlider" type="HSlider" parent="UI/SettingsPanel/CenterContainer/WindowPanel/SettingsBox" unique_id=1999768572]
+unique_name_in_owner = true
+layout_mode = 2
+value = 80.0
+
+[node name="MusicValueLabel" type="Label" parent="UI/SettingsPanel/CenterContainer/WindowPanel/SettingsBox" unique_id=64808138]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SfxSlider" type="HSlider" parent="UI/SettingsPanel/CenterContainer/WindowPanel/SettingsBox" unique_id=13713731]
+unique_name_in_owner = true
+layout_mode = 2
+value = 80.0
+
+[node name="SfxValueLabel" type="Label" parent="UI/SettingsPanel/CenterContainer/WindowPanel/SettingsBox" unique_id=782132990]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="UI/SettingsPanel/CenterContainer/WindowPanel/SettingsBox" unique_id=69294567]
+unique_name_in_owner = true
+layout_mode = 2
+text = "กลับ"
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=2030128545]
+stream = ExtResource("2_h7a2f")
+autoplay = true
+bus = &"Music"

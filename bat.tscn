@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://fyhqp64eqt0u"]
+
+[ext_resource type="Texture2D" uid="uid://dla2e41h7olme" path="res://Assert/platformer_metroidvania asset pack v1.01/platformer_metroidvania asset pack v1.01/enemies sprites/fly/blue_fly_idle_or_flying_anim_strip_3.png" id="1_pb2o4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tofr1"]
+atlas = ExtResource("1_pb2o4")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vobq3"]
+atlas = ExtResource("1_pb2o4")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tubu"]
+atlas = ExtResource("1_pb2o4")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3tecl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tofr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vobq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tubu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bat" type="AnimatedSprite2D" unique_id=851113156]
+position = Vector2(0, 4.7683716e-07)
+scale = Vector2(2.375, 2.125)
+sprite_frames = SubResource("SpriteFrames_3tecl")
+frame_progress = 0.03902984

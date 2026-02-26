@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bqaqblcp2d3pc"]
+
+[ext_resource type="Script" uid="uid://bbfolasyx8owc" path="res://JumpPad.gd" id="1_cysje"]
+[ext_resource type="Texture2D" uid="uid://cu20jg5kk5mw8" path="res://Assert/platformer_metroidvania asset pack v1.01/platformer_metroidvania asset pack v1.01/miscellaneous sprites/orb_anim_strip_6.png" id="2_dd87t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7ut2"]
+size = Vector2(60, 20)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hls3s"]
+texture = ExtResource("2_dd87t")
+
+[sub_resource type="TileSet" id="TileSet_oeeh7"]
+sources/0 = SubResource("TileSetAtlasSource_hls3s")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipo01"]
+atlas = ExtResource("2_dd87t")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgt2d"]
+atlas = ExtResource("2_dd87t")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbf53"]
+atlas = ExtResource("2_dd87t")
+region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojj2i"]
+atlas = ExtResource("2_dd87t")
+region = Rect2(40, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgwlf"]
+atlas = ExtResource("2_dd87t")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6u3fc"]
+atlas = ExtResource("2_dd87t")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v4loe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipo01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgt2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbf53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojj2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgwlf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6u3fc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="JumpPad" type="Area2D" unique_id=1764414355]
+position = Vector2(540, 572)
+script = ExtResource("1_cysje")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2083944535]
+shape = SubResource("RectangleShape2D_h7ut2")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=145781874]
+tile_set = SubResource("TileSet_oeeh7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1371147860]
+position = Vector2(1.9073486e-06, 5.000004)
+scale = Vector2(7.437502, 5.374999)
+sprite_frames = SubResource("SpriteFrames_v4loe")
+frame_progress = 0.14285412

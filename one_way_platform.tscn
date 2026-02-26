@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cn11ka46cp0nb"]
+
+[ext_resource type="Texture2D" uid="uid://br5r5xaxmgry4" path="res://Assert/brackeys_platformer_assets/brackeys_platformer_assets/sprites/platforms.png" id="1_gdb4l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2n1rq"]
+size = Vector2(32, 9)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3wb7o"]
+texture = ExtResource("1_gdb4l")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1vh2r"]
+sources/0 = SubResource("TileSetAtlasSource_3wb7o")
+
+[node name="OneWayPlatform" type="StaticBody2D" unique_id=697300817]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1308198334]
+visibility_layer = 2
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_2n1rq")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=798301436]
+tile_map_data = PackedByteArray(0, 0, 255, 255, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_1vh2r")
